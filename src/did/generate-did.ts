@@ -1,3 +1,5 @@
+import { generateMultibaseKey } from "./multibase";
+
 export const getContextUrls = (): string[] => {
   return [
     "https://www.w3.org/ns/did/v1",
@@ -32,7 +34,7 @@ export const generateDIDDocument = () => {
         id: generateDecentralizedID("id", 48),
         type: "Ed25519VerificationKey2020",
         controller: generateDecentralizedID("controller", 48),
-        publicKeyMultibase: "zH3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV",
+        publicKeyMultibase: generateMultibaseKey(),
       },
     ],
   };
